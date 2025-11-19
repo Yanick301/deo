@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Product } from '../../types';
 import { useShop } from '../../context/ShopContext';
 import { motion } from 'framer-motion';
@@ -19,8 +21,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       viewport={{ once: true }}
       className="group cursor-pointer"
     >
-      <Link to={`/product/${product.id}`}>
+      <Link href={`/product/${product.id}`}>
         <div className="relative overflow-hidden aspect-[4/5] bg-gray-100 mb-4">
+          {/* Using standard img tag for local assets to ensure compatibility with current image paths */}
           <img 
             src={product.imageUrls[0]} 
             alt={product.title[language]}

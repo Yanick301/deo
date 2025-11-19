@@ -1,6 +1,9 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Search, Menu, X, Globe, User as UserIcon, LogOut } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ShoppingBag, Search, Menu, X, User as UserIcon, LogOut } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
 import { CATEGORIES, LANGUAGES } from '../../constants';
 import { useAuth } from '../../context/AuthContext';
@@ -8,7 +11,7 @@ import { AuthModal } from '../Auth/AuthModal';
 import { SearchOverlay } from '../UI/SearchOverlay';
 
 export const Header: React.FC = () => {
-  const { language, setLanguage, t, cartCount, toggleCart } = useShop();
+  const { language, setLanguage, cartCount, toggleCart } = useShop();
   const { user, signOut } = useAuth();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +19,7 @@ export const Header: React.FC = () => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -26,7 +29,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const currentFlag = LANGUAGES.find(l => l.code === language)?.flag;
 
@@ -41,14 +44,14 @@ export const Header: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <Link to="/" className={`text-2xl font-serif font-bold tracking-[0.2em] ${isScrolled ? 'text-black' : 'text-white'}`}>
+          <Link href="/" className={`text-2xl font-serif font-bold tracking-[0.2em] ${isScrolled ? 'text-black' : 'text-white'}`}>
             EZCENTIALS
           </Link>
 
           {/* Desktop Nav */}
           <nav className={`hidden lg:flex gap-8 text-xs uppercase tracking-[0.15em] font-medium ${isScrolled ? 'text-black' : 'text-white'}`}>
             {CATEGORIES.slice(0, 5).map(cat => (
-              <Link key={cat.id} to={cat.path} className="hover:text-brand-gold transition-colors relative group">
+              <Link key={cat.id} href={cat.path} className="hover:text-brand-gold transition-colors relative group">
                 {cat.label[language]}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
               </Link>
@@ -116,9 +119,9 @@ export const Header: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 w-full bg-white text-black border-t h-screen p-6 overflow-y-auto animate-slide-up">
             <nav className="flex flex-col gap-6 text-lg uppercase tracking-widest">
-              <Link to="/" className="font-bold" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link href="/" className="font-bold" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               {CATEGORIES.map(cat => (
-                <Link key={cat.id} to={cat.path} onClick={() => setIsMobileMenuOpen(false)}>
+                <Link key={cat.id} href={cat.path} onClick={() => setIsMobileMenuOpen(false)}>
                   {cat.label[language]}
                 </Link>
               ))}

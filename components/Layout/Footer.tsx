@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { useShop } from '../../context/ShopContext';
 import { CATEGORIES } from '../../constants';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export const Footer: React.FC = () => {
   const { t, language } = useShop();
@@ -26,7 +28,7 @@ export const Footer: React.FC = () => {
           <ul className="space-y-3 text-sm text-gray-400">
             {CATEGORIES.slice(0,4).map(cat => (
               <li key={cat.id}>
-                <Link to={cat.path} className="hover:text-white transition-colors">{cat.label[language]}</Link>
+                <Link href={cat.path} className="hover:text-white transition-colors">{cat.label[language]}</Link>
               </li>
             ))}
           </ul>
@@ -36,8 +38,8 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="font-serif text-lg mb-6">Service</h4>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link to="/contact" className="hover:text-white">{t('nav_contact')}</Link></li>
-            <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+            <li><Link href="/contact" className="hover:text-white">{t('nav_contact')}</Link></li>
+            <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
             <li><a href="#" className="hover:text-white">Shipping & Returns</a></li>
           </ul>
         </div>

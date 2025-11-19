@@ -1,8 +1,10 @@
+'use client';
+
 import React from 'react';
 import { useShop } from '../context/ShopContext';
 import { X, Trash2 } from 'lucide-react';
 import { Button } from '../components/UI/Button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export const Cart: React.FC = () => {
   const { cart, isCartOpen, toggleCart, removeFromCart, cartTotal, currency, t, language } = useShop();
@@ -55,7 +57,7 @@ export const Cart: React.FC = () => {
               <span>{t('cart_total')}</span>
               <span>{cartTotal.toFixed(2)} {currency}</span>
             </div>
-            <Link to="/checkout" onClick={toggleCart}>
+            <Link href="/checkout" onClick={toggleCart}>
                 <Button fullWidth>{t('checkout')}</Button>
             </Link>
             <p className="text-xs text-center text-gray-400 mt-4">Tax included. Shipping calculated at checkout.</p>
