@@ -1,0 +1,118 @@
+================================================================================
+EZCENTIALS - IMAGE ASSET LIST
+================================================================================
+
+INSTRUCTIONS:
+1. Create a folder named 'images' inside your 'public' directory.
+   Path: /public/images/
+   
+2. Inside 'images', create a subfolder named 'products'.
+   Path: /public/images/products/
+
+3. Download or create images that match the descriptions below.
+4. Rename them EXACTLY as listed on the left side.
+
+================================================================================
+HOMEPAGE ASSETS
+Location: /public/images/
+================================================================================
+
+[HERO SLIDESHOW]
+1. hero_couple_winter_walk.jpg  -> A rich couple walking in snow, wearing wool coats.
+2. hero_couple_city_suit.jpg    -> A couple in a European city, man in suit, woman in trench coat.
+3. hero_couple_evening_wear.jpg -> Elegant evening vibe, luxury coats, dark lighting.
+
+[CATEGORY PREVIEWS]
+4. category_preview_men.jpg     -> High fashion shot of a man in a suit or coat.
+5. category_preview_women.jpg   -> High fashion shot of a woman in a red dress or coat.
+
+[CAMPAIGN]
+6. campaign_poster.jpg          -> Cinematic, artistic shot (gold/black theme).
+
+[REVIEWS BACKGROUND]
+7. reviews_background.jpg       -> Texture or blurred luxury interior (black/gold/dark).
+
+================================================================================
+PRODUCT CATALOG ASSETS
+Location: /public/images/products/
+================================================================================
+
+NOTE: The system generates filenames based on: {category}_{noun}_{color}_{view}.jpg
+Below is the list of files you need to cover the generated catalog.
+You need 3 views per item:
+_1.jpg = Main Front View
+_2.jpg = Side/Back View or Model Pose
+_3.jpg = Fabric Detail Zoom
+
+--- MEN'S CLOTHING (men-clothing) ---
+men-clothing_coat_black_1.jpg
+men-clothing_coat_black_2.jpg
+men-clothing_coat_black_3.jpg
+men-clothing_suit_blue_1.jpg
+men-clothing_suit_blue_2.jpg
+men-clothing_suit_blue_3.jpg
+men-clothing_jacket_brown_1.jpg
+men-clothing_jacket_brown_2.jpg
+men-clothing_jacket_brown_3.jpg
+men-clothing_trousers_grey_1.jpg
+men-clothing_trousers_grey_2.jpg
+men-clothing_trousers_grey_3.jpg
+men-clothing_shirt_white_1.jpg
+men-clothing_shirt_white_2.jpg
+men-clothing_shirt_white_3.jpg
+
+--- WOMEN'S CLOTHING (women-clothing) ---
+women-clothing_dress_red_1.jpg
+women-clothing_dress_red_2.jpg
+women-clothing_dress_red_3.jpg
+women-clothing_coat_beige_1.jpg
+women-clothing_coat_beige_2.jpg
+women-clothing_coat_beige_3.jpg
+women-clothing_skirt_black_1.jpg
+women-clothing_skirt_black_2.jpg
+women-clothing_skirt_black_3.jpg
+women-clothing_blazer_white_1.jpg
+women-clothing_blazer_white_2.jpg
+women-clothing_blazer_white_3.jpg
+
+--- WINTERWEAR (winterwear) ---
+winterwear_coat_grey_1.jpg
+winterwear_coat_grey_2.jpg
+winterwear_coat_grey_3.jpg
+winterwear_scarf_black_1.jpg
+winterwear_scarf_black_2.jpg
+winterwear_scarf_black_3.jpg
+winterwear_jacket_blue_1.jpg
+winterwear_jacket_blue_2.jpg
+winterwear_jacket_blue_3.jpg
+
+--- ACCESSORIES (men-accessories & women-accessories) ---
+men-accessories_bag_brown_1.jpg
+men-accessories_bag_brown_2.jpg
+men-accessories_bag_brown_3.jpg
+women-accessories_bag_black_1.jpg
+women-accessories_bag_black_2.jpg
+women-accessories_bag_black_3.jpg
+women-accessories_scarf_red_1.jpg
+women-accessories_scarf_red_2.jpg
+women-accessories_scarf_red_3.jpg
+
+--- CHRISTMAS & COLLECTIONS (christmas, brand-collections) ---
+christmas_dress_gold_1.jpg
+christmas_dress_gold_2.jpg
+christmas_dress_gold_3.jpg
+brand-collections_suit_black_1.jpg
+brand-collections_suit_black_2.jpg
+brand-collections_suit_black_3.jpg
+
+================================================================================
+GENERIC FALLBACKS (If specific color not found)
+================================================================================
+If you don't want to download 500 images, replicate these generic files
+and rename them to match the specific requests above.
+
+generic_coat.jpg
+generic_suit.jpg
+generic_dress.jpg
+generic_bag.jpg
+generic_shoes.jpg
